@@ -3,8 +3,6 @@ version: '3'
 services:
   php72:
     image: iordachej/php:7.2-fpm-alpine3.7-sf4
-    depends_on:
-      - nginx113
     volumes:
       - "./php-fpm/php-fpm.conf:/usr/local/etc/php-fpm.conf"
       - "./php-fpm/html:/var/www/html:rw"
@@ -22,3 +20,6 @@ services:
       - "..:/usr/share/nginx:rw"
       - "./ngnix/nginx.conf:/etc/nginx/nginx.conf:rw"
       - "./ngnix/default.conf:/etc/nginx/conf.d/default.conf:rw"
+    depends_on:
+      - php72
+
