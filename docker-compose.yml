@@ -7,10 +7,15 @@ services:
       - "./php-fpm/php-fpm.conf:/usr/local/etc/php-fpm.conf"
       - "./php-fpm/php.ini:/usr/local/etc/php/php.ini"
       - "./php-fpm/html:/var/www/html:rw"
+      - "./entrypoint.sh:/var/www/entrypoint.sh:rw"
       - "..:/usr/share/nginx:rw"
     environment:
       APP_ENV: prod
       APP_RUN_MODE: prod
+    env_file:
+        - ./web-variables.env
+    command: /var/www/entrypoint.sh
+
 #root   /usr/share/nginx/public_html
 
   nginx113:
