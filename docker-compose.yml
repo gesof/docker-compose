@@ -7,6 +7,7 @@ services:
       - nginx113
     volumes:
       - "./php-fpm/php-fpm.conf:/usr/local/etc/php-fpm.conf"
+      - "./php-fpm/php.ini:/usr/local/etc/php/php.ini"
       - "./php-fpm/html:/var/www/html:rw"
       - "..:/usr/share/nginx:rw"
     environment:
