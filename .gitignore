@@ -2,3 +2,4 @@
 ngnix/default\.conf
 entrypoint.sh
 web-variables.env
+hosts.txt
